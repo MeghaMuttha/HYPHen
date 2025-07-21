@@ -1,0 +1,212 @@
+/* ---------- SECTION BASE ---------- */
+.discover-section {
+  height: 100vh;
+  background: linear-gradient(120deg, #CADB56, #D1DF58);
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.discover-title {
+  font-size: 2rem;
+  z-index: 3;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ---------- CENTER TEXT + PULSE ---------- */
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.central-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #E23E57;
+  margin-top: 1.5rem;
+  animation: fadeInText 2s ease-out 0.5s both;
+}
+
+.pulse-circle {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(226, 62, 87, 0.12);
+  border-radius: 50%;
+  animation: pulse 2s infinite ease-in-out;
+  box-shadow: 0 0 20px rgba(226, 62, 87, 0.4);
+  position: relative;
+}
+
+.pulse-circle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: ringPulse 2s infinite ease-in-out;
+}
+
+/* ---------- FLOATING IMAGES ---------- */
+.discover-image-wrapper {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.discover-img {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* ---------- EXPANDING TRANSITION CIRCLE ---------- */
+.transition-circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #E23E57;
+  border-radius: 50%;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+}
+
+/* ---------- 3RD PAGE SECTION ---------- */
+.third-section {
+  min-height: 100vh;
+  background:#E23E57;
+  padding: 5rem 2rem;
+  text-align: center;
+  z-index: 20;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.third-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.third-desc {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.4;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .discover-image-wrapper {
+    width: 400px;
+    height: 400px;
+  }
+
+  .discover-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .central-text {
+    font-size: 1.4rem;
+  }
+
+  .pulse-circle {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .discover-image-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+
+  .discover-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .central-text {
+    font-size: 1.2rem;
+  }
+
+  .pulse-circle {
+    width: 70px;
+    height: 70px;
+  }
+}

@@ -1,0 +1,23 @@
+.subcategory-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.subcategory-tab {
+  background-color: #eee;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.subcategory-tab.active,
+.subcategory-tab:hover {
+  background-color:#7c8d97;
+  color:white;
+}

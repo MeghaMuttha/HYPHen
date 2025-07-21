@@ -1,0 +1,121 @@
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #05445E, #D4F1F4);
+  padding: 2rem;
+}
+
+/* Center text between images */
+.hero-text {
+  position: relative;
+  z-index: 2; /* between images */
+  color: white;
+  text-align: center;
+  max-width: 600px;
+  padding: 2rem;
+}
+
+/* Text styling */
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+}
+
+/* Floating images */
+.floating-img {
+  position: absolute;
+  width: 35vw;
+  max-width: 450px;
+  z-index: 1; /* behind the text */
+  pointer-events: none;
+  opacity: 0.85;
+  transition: transform 0.3s ease;
+}
+
+.left-img {
+  left: -5vw; /* pull further to left */
+  bottom: 0;
+}
+
+.right-img {
+  right: -5vw; /* pull further to right */
+  top: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .floating-img {
+    width: 40vw;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-img {
+    width: 45vw;
+    opacity: 0.6;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+@media (max-width: 480px) {
+  .hero-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .floating-img {
+    width: 120px;         /* smaller size */
+    height: auto;
+    position: absolute;
+    opacity: 0.9;
+  }
+
+  .left-img {
+    left: 10%;
+    top: 20%;
+    transform: translateX(0);
+  }
+
+  .right-img {
+    right: 10%;
+    top: 60%;
+    transform: translateX(0);
+  }
+
+  .hero-text {
+    text-align: center;
+    z-index: 10;
+    padding-top: 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
+

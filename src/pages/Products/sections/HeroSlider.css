@@ -1,0 +1,27 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-slider-container {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 7; /* maintains ratio across screen sizes */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff; /* Optional: image bg */
+  padding: 0;
+  margin: 0;
+}
+
+.hero-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* show full image, no cropping */
+  object-position: center;
+  display: block;
+}

@@ -1,0 +1,67 @@
+.site-footer {
+  background-color:white;
+  color:#7C8D97;
+  padding: 2rem 1rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-section {
+  min-width: 180px;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: #7C8D97;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+/* Specific styling for the About Hyphen points */
+.footer-points li {
+  cursor: default;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+/* Social Links */
+.social-icons a {
+  font-size: 1.4rem;
+  margin-right: 1rem;
+  color:#7C8D97;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+ 
+}
+
+
