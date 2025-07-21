@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ProductGrid from './ProductGrid';
+import ProductGrid from './productGrid.jsx'
 
 const ProductCategory = ({ categoryName, subcategories = [] }) => {
   const [selectedCategory, setSelectedCategory] = useState(
