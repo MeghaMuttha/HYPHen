@@ -3,6 +3,7 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './TransitionCircle.css';
+import { CircularText } from '../../animations/CircularText/CircularText';
 
 import imageLeft from '../../../assets/images/hero/fly.png';
 import heroImage from '../../../assets/images/hero/Gif1.gif';
@@ -55,14 +56,16 @@ const TransitionCircle = () => {
             className="third-img"
           />
         <div className='text '>
-             <p>discover discoverdiscover life and yourself<br></br>discover life and yourself<br></br>discover life and yourself<br></br>discover life and yourself<br></br></p>
-        </div>
-          {/* <img
            
-            src={heroImage}
-            alt="static Left"
-            className="right-img r-img"
-          /> */}
+        </div>
+          
+  
+<CircularText
+  text="HAVE-IT-ALL*"
+  onHover="speedUp"
+  spinDuration={20}
+  className="custom-class"
+/>
            
     </section>
   )
