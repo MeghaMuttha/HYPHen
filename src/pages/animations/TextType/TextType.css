@@ -1,0 +1,36 @@
+/* TextType base wrapper */
+.text-type {
+  display: inline-block;
+  width: 100%;
+}
+
+/* Actual typing content */
+.text-type__content {
+  display: inline;
+  color: #7c8d97;       /* Your preferred color */
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* Typing cursor */
+.text-type__cursor {
+  display: inline-block;
+  color: #7c8d97;
+  margin-left: 4px;
+  font-size: 2rem;
+  font-weight: bold;
+  animation: blink 1s step-start infinite;
+}
+
+/* Optional hide animation */
+.text-type__cursor--hidden {
+  opacity: 0;
+}
+
+/* Cursor blink effect */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './WhyChooseUs.css';
-
+import {TextType } from '../../animations/TextType/TextType.jsx'
 
 
 import img1 from '../../../assets/images/discover/img1.jpg';
@@ -59,19 +59,7 @@ useEffect(() => {
     }, i * 0.2);
   });
    
-// Fade out images before expanding circle
-// fullTimeline.to(imageRefs.current, {
-//   opacity: 0,
-//   duration: 0.5,
-//   stagger: 0.1
-// }, '+=0.5');
 
-  // 2️⃣ Circle expands **after** image animation completes
-  // fullTimeline.to(circleRef.current, {
-  //   scale: 15,
-  //   ease: "power2.inOut",
-  //   duration: 1.5,
-  // }, '+=0.5'); // delay after image anim
 
 
  }, []);
@@ -81,11 +69,25 @@ return (
       <section className="discover-section" ref={containerRef}>
         <div className="center-content">
           <div className="pulse-circle"></div>
-          <h3 className="central-text">
-            Gentle care for tired skin.<br />
-            Soothe, soften, and strengthen.<br />
-            Because self-care isn’t selfish — it’s essential.
-          </h3>
+        <TextType 
+  text={[
+    "Gentle care for tired skin.",
+    "Soothe, soften, and strengthen.",
+    "Because self-care isn’t selfish — it’s essential."
+  ]}
+  typingSpeed={60}
+  deletingSpeed={30}
+  pauseDuration={2000}
+  className="central-text"
+  as="h3"
+  showCursor={true}
+  cursorCharacter="|"
+  startOnVisible={false}   // 🟢 Animate on load
+  loop={true}
+/>
+
+
+
         </div>
 
         <div className="discover-image-wrapper">

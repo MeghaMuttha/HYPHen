@@ -2,7 +2,7 @@
 .discover-section {
   height: 100vh;
   background: linear-gradient(120deg, #CADB56, #D1DF58);
-  color: #fff;
+  color:black; /* Dark text color for contrast */
   overflow: hidden;
   position: relative;
   display: flex;
@@ -10,13 +10,6 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-}
-
-.discover-title {
-  font-size: 2rem;
-  z-index: 3;
-  text-align: center;
-  margin-bottom: 2rem;
 }
 
 /* ---------- CENTER TEXT + PULSE ---------- */
@@ -34,13 +27,37 @@
 }
 
 .central-text {
-  font-size: 1.8rem;
+  font-size: 5rem;
   font-weight: 600;
-  color: #E23E57;
-  margin-top: 1.5rem;
-  animation: fadeInText 2s ease-out 0.5s both;
+  text-align: center;
+  color:  #333333; ; /* or even #000 for pure black */
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.central-text .text-type__content {
+  color: #333333 !important; /* Force override */
 }
 
+.text-type__content {
+  display: inline;
+  color: inherit;
+  font-weight: inherit;
+  
+  transition: all 0.3s ease;
+  will-change: contents;
+
+
+}
+
+.text-type__cursor {
+  margin-left: 4px;
+  font-weight: bold;
+  color:#1e1e1e;
+}
+
+
+/* ---------- PULSE ANIMATION ---------- */
 .pulse-circle {
   width: 100px;
   height: 100px;
@@ -82,49 +99,12 @@
   border-radius: 50%;
   object-fit: cover;
   opacity: 0;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
-/* ---------- EXPANDING TRANSITION CIRCLE ---------- */
-.transition-circle {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: #E23E57;
-  border-radius: 50%;
-  z-index: 10;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  pointer-events: none;
-}
+/* ---------- TRANSITION CIRCLE ---------- */
 
-/* ---------- 3RD PAGE SECTION ---------- */
-.third-section {
-  min-height: 100vh;
-  background:#E23E57;
-  padding: 5rem 2rem;
-  text-align: center;
-  z-index: 20;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.third-title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.third-desc {
-  font-size: 1.2rem;
-  color: #555;
-}
 
 /* ---------- ANIMATIONS ---------- */
 @keyframes pulse {
@@ -154,17 +134,6 @@
   100% {
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0.4;
-  }
-}
-
-@keyframes fadeInText {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
