@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import './FounderPage.css';
 import { gsap } from 'gsap';
+import ProfileCard from '../Founder/sections/ProfileCard'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import f1 from '../../assets/images/founder/kriti-sanon.jpg'
 import f2 from '../../assets/images/founder/tarun-sharma.jpg'
@@ -91,6 +92,17 @@ const FounderPage = () => {
         ))}
       </div>
     </section>
+//     <ProfileCard
+//   name="Javi A. Torres"
+//   title="Software Engineer"
+//   handle="javicodes"
+//   status="Online"
+//   contactText="Contact Me"
+//   avatarUrl = "https://images.unsplash.com/photo-1626808642875-0aa545482dfb?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+//   showUserInfo={true}
+//   enableTilt={true}
+//   onContactClick={() => console.log('Contact clicked')}
+// />
   );
 };
 
