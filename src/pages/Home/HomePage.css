@@ -1,0 +1,90 @@
+/* Base Styles */
+.homepage-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Section Wrapper (if needed) */
+.section {
+  padding: 80px 5%;
+}
+
+/* Utility for Centered Text */
+.text-center {
+  text-align: center;
+}
+
+/* Responsive Typography */
+h1, h2, h3 {
+  color: #222;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Example Card Container (Optional: for CardSection if no internal style) */
+.card-section-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Full Width Section for Hero or Transition */
+.full-width-section {
+  width: 100%;
+  position: relative;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media screen and (max-width: 1024px) {
+  .section {
+    padding: 60px 4%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 50px 2rem;
+  }
+
+  .card-section-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 40px 1rem;
+  }
+
+  h1, h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
