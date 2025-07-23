@@ -224,6 +224,9 @@
   }
 }
 @media (min-width: 300px) and (max-width: 669px) {
+  .chroma-grid .chroma-card:nth-child(n + 4) {
+    display: none;
+  }
   .chroma-grid {
     display: flex;
     flex-direction: column;
