@@ -1,13 +1,14 @@
 .founders-section {
   padding: 100px 5% 60px;
- background: linear-gradient(120deg, #ece3d5, #E5E0D8);
+ background: linear-gradient(120deg, #100f0e, #E5E0D8);
   text-align: center;
 }
 
 .founders-heading {
   font-size: 2.5rem;
   color: var(--primary-color);
-  margin-bottom: 3rem;
+
+  margin-top:5rem;
 }
 
 .founders-grid {

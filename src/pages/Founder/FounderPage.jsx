@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import './FounderPage.css';
 import { gsap } from 'gsap';
-import ProfileCard from '../Founder/sections/ProfileCard'
+import CircularGallery from "../animations/CircularGallary/circularImages/CircularGallery.jsx"
+import VariableProximity from '../animations/VariableP/VariableProximity/VariableProximity.jsx';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import f1 from '../../assets/images/founder/kriti-sanon.jpg'
 import f2 from '../../assets/images/founder/tarun-sharma.jpg'
@@ -13,96 +14,35 @@ import f6 from '../../assets/images/founder/Mohit-jain_1.jpg'
 // Register plugin
 gsap.registerPlugin(ScrollTrigger);
 
-const founders = [
-  {
-    name: "KRITI SANON",
-    role: "Co-Founder & Chief Customer Officer",
-    img: f1,
-   
-  },
-  {
-    name: "TARUN SHARMA",
-    role: "Co-Founder & CEO",
-    img: f2,
-    
-  },
-  {
-    name: "VAISHALI GUPTA ",
-    role: "Co-Founder & Chief Growth Officer",
-    img: f3,
-   
-  },
-  {
-    name: "VIKAS LACHHWANI",
-    role: "Co-Founder & Chief Innovation Officer",
-    img: f4,
-   
-  },
-  {
-    name: "SAURABH SINGHAL",
-    role: "Co-Founder & Chief Supply Officer",
-    img:f5,
-    
-  },
-  {
-    name: "MOHIT JAIN",
-    role: "Creative DirectoCo-Founder & Head of Finance",
-    img: f6
-   
-  },
-];
-
 const FounderPage = () => {
-  const cardsRef = useRef([]);
-
-  useEffect(() => {
-    cardsRef.current.forEach((card, i) => {
-      gsap.fromTo(card,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    });
-  }, []);
-
-  return (
+ const containerRef = useRef(null);
+return (
     <section className="founders-section">
-      <h2 className="founders-heading">--------The Brains. The Bold. The Builders.--------</h2>
-      <div className="founders-grid">
-        {founders.map((founder, index) => (
-          <div
-            className="founder-card"
-            key={index}
-            ref={(el) => (cardsRef.current[index] = el)}
-          >
-            <img src={founder.img} alt={founder.name} className="founder-image" />
-            <h3>{founder.name}</h3>
-            <p className="founder-role">{founder.role}</p>
-            <p className="founder-bio">{founder.bio}</p>
-          </div>
-        ))}
+     
+       <div ref={containerRef}
+       className='founders-heading '
+       style={{position: 'relative'}}>
+                 <VariableProximity
+           label={"Meet the Visionaries Behind HYPHen"}
+           className={'variable-proximity-demo'}
+           fromFontVariationSettings="'wght' 400, 'opsz' 9"
+           toFontVariationSettings="'wght' 1000, 'opsz' 40"
+           containerRef={containerRef}
+           radius={60}
+           tag="h1"
+           falloff='linear'
+          
+         />   
+         <br></br>
+        </div>
+      
+      <div>
+            <div style={{ height: '600px', position: 'relative' }}>
+        <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02}/>
       </div>
+          </div>
     </section>
-//     <ProfileCard
-//   name="Javi A. Torres"
-//   title="Software Engineer"
-//   handle="javicodes"
-//   status="Online"
-//   contactText="Contact Me"
-//   avatarUrl = "https://images.unsplash.com/photo-1626808642875-0aa545482dfb?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
-//   showUserInfo={true}
-//   enableTilt={true}
-//   onContactClick={() => console.log('Contact clicked')}
-// />
+
   );
 };
 
