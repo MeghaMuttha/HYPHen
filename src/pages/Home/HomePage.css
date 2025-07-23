@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+   background: linear-gradient(120deg, #05445E, #D4F1F4);
 }
 
 /* Section Wrapper (if needed) */

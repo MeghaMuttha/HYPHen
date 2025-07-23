@@ -3,51 +3,63 @@
   height: 100vh;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  overflow: hidden;
-  background: linear-gradient(120deg, #05445E, #D4F1F4);
   padding: 0;
-  gap: 2vw;
-  box-sizing: border-box;
-  opacity: 1;
+  overflow: hidden;
   flex-wrap: wrap;
+  background: linear-gradient(120deg, #f6d365, #fda085);
+  animation: gradientShift 10s ease infinite alternate;
 }
 
-/* Floating image on the left */
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(120deg, #f6d365, #fda085);
+  }
+  100% {
+    background: linear-gradient(120deg, #a18cd1, #fbc2eb);
+  }
+}
+
 .third-img {
-  width: 35%;
-  pointer-events: none;
-  opacity: 0.95;
-  z-index: 2;
+  width: 30%;
+  max-width: 300px;
+  min-width: 180px;
+  opacity: 0.9;
   position: absolute;
   left: 2rem;
-  right:3rem;
   bottom: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Text section */
 .text {
-  width:50%;
-  margin: 15rem 2rem;
-  text-align: end;
-  color: #fdf7f7;
-  z-index: 3;
- 
+  width: 50%;
+  max-width: 500px;
+  text-align: right;
+  color: #fff;
+  margin-right: 4rem;
+  z-index: 2;
 }
 
-.text  {
-  font-size: 5rem;
-  text-align: end;
+.tagline {
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.2;
   margin-bottom: 1rem;
+  background: linear-gradient(to right, #fff, #ffe7c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.text p {
+.subtext {
   font-size: 1.25rem;
+  font-weight: 400;
+  opacity: 0.9;
 }
 
-/* Media Queries for responsiveness */
-
+/* Responsive Tweaks */
 @media (max-width: 1024px) {
   .third-section {
     flex-direction: column;
@@ -56,36 +68,36 @@
 
   .third-img {
     position: relative;
-    width: 50vw;
-    margin: 0 auto;
+    margin-top: 2rem;
     left: 0;
   }
 
- 
-
-  .text  {
-    font-size: 2.5rem;
+  .text {
     text-align: center;
+    margin: 2rem auto;
+    width: 80%;
   }
 
-  .text p {
+  .tagline {
+    font-size: 2.5rem;
+  }
+
+  .subtext {
     font-size: 1.1rem;
   }
 }
 
 @media (max-width: 600px) {
-  .floating-img {
-    width: 70vw;
+  .third-img {
+    width: 60vw;
   }
 
-  .text  {
+  .tagline {
     font-size: 2rem;
-    margin-right:2rem;
   }
 
-
-  .text p{
-    margin: 1rem;
+  .subtext {
+    font-size: 1rem;
     padding: 0 1rem;
   }
 }
