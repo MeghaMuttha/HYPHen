@@ -1,0 +1,63 @@
+.photogrid-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.photogrid {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Scroll velocity text styling */
+.custom-scroll-text {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 1024px) {
+  .photogrid {
+    height: 500px;
+  }
+
+  .custom-scroll-text {
+    font-size: 1.8rem;
+    padding: 0.8rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .photogrid {
+    height: 400px;
+    padding: 0 1rem;
+  }
+
+  .custom-scroll-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .photogrid {
+    height: 320px;
+    padding: 0 0.5rem;
+  }
+
+  .custom-scroll-text {
+    font-size: 1.2rem;
+  }
+}
