@@ -4,7 +4,7 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   padding: 2rem;
-
+  justify-items: center; /* Center-align cards */
 }
 
 /* Product Card Styling */
@@ -12,18 +12,18 @@
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 430px; /* Fixed height */
-  padding:2rem;
+  padding: 2rem;
   text-align: center;
-  max-width:300px;
-  
-  gap:1rem;
+  max-width: 300px;
+  height: auto; /* ⚠️ Use auto instead of fixed height */
+  gap: 1rem;
+  position: relative; /* ✅ ensure inner button stays visible */
 }
+
 
 .product-card:hover {
   transform: translateY(-5px);
@@ -32,7 +32,7 @@
 /* Product Image */
 .product-img {
   width: 100%;
-  height: 200px; /* Fixed image height */
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -59,7 +59,7 @@
   margin: 0.4rem 0;
 }
 
-/* Add to Cart Button */
+/* Add to Cart Button (always visible now) */
 .add-to-cart-btn {
   background-color: #88304e;
   color: white;
@@ -67,11 +67,15 @@
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   font-size: 0.9rem;
-  margin-top: auto; 
+  width: 100%;
+  max-width: 200px;
   cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 
-  /* transition: transform 0.3s ease, background-color 0.3s ease; */
+  /* ✅ REMOVE margin-top: auto */
+  margin-top: 0.5rem; /* or set small margin */
 }
+
 
 .add-to-cart-btn:hover {
   transform: scale(1.05);
@@ -79,19 +83,55 @@
 }
 
 /* Responsive Tweaks */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .product-grid {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
   .product-card {
     height: auto;
+    padding: 1.5rem;
   }
 
   .product-img {
     height: 180px;
   }
 }
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1rem;
+    justify-items: center;
+  }
+
+  .product-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    max-width: 95%;
+    padding: 1rem;
+  }
+
+  .product-img {
+    height: 160px;
+  }
+
+  .add-to-cart-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Category Heading */
 .category-heading {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #88304e; /* Matches your brand's secondary color */
+  color: #88304e;
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 1.5rem;
@@ -104,6 +144,6 @@
   width: 80px;
   height: 4px;
   margin: 0.6rem auto 0;
-  background-color: #e23e57; /* Your primary color */
+  background-color: #e23e57;
   border-radius: 2px;
 }
