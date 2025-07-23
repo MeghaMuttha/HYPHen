@@ -17,7 +17,7 @@
 }
 
 /* Scroll velocity text styling */
-.custom-scroll-text {
+/* .custom-scroll-text {
   font-size: 2.2rem;
   font-weight: 600;
   color: #222;
@@ -27,7 +27,7 @@
   padding: 1rem 0;
   text-align: center;
   letter-spacing: 0.03em;
-}
+} */
 
 @media (max-width: 1024px) {
   .photogrid {
