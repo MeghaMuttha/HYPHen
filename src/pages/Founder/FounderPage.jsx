@@ -4,12 +4,7 @@ import { gsap } from 'gsap';
 import CircularGallery from "../animations/CircularGallary/circularImages/CircularGallery.jsx"
 import VariableProximity from '../animations/VariableP/VariableProximity/VariableProximity.jsx';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import f1 from '../../assets/images/founder/kriti-sanon.jpg'
-import f2 from '../../assets/images/founder/tarun-sharma.jpg'
-import f3 from '../../assets/images/founder/vaishali-gupta.jpg'
-import f4 from '../../assets/images/founder/vikas-lachwani_1.jpg'
-import f5 from '../../assets/images/founder/saurabh_1.jpg'
-import f6 from '../../assets/images/founder/Mohit-jain_1.jpg'
+
 
 // Register plugin
 gsap.registerPlugin(ScrollTrigger);

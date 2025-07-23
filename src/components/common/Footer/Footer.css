@@ -1,19 +1,24 @@
 .site-footer {
-  background-color:white;
-  color:#7C8D97;
+  background-color: white;
+  color: #7C8D97;
   padding: 2rem 1rem;
   font-family: 'Arial', sans-serif;
 }
 
+/* Top Section Grid */
 .footer-top {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Each column */
 .footer-section {
   min-width: 180px;
+  flex: 1;
 }
 
 .footer-section h4 {
@@ -40,28 +45,46 @@
   text-decoration: underline;
 }
 
-/* Specific styling for the About Hyphen points */
+/* Static points in About Hyphen */
 .footer-points li {
   cursor: default;
 }
 
+/* Bottom copyright line */
 .footer-bottom {
   margin-top: 2rem;
   text-align: center;
   font-size: 0.9rem;
   opacity: 0.85;
 }
-/* Social Links */
+
+/* Social Icons */
 .social-icons a {
   font-size: 1.4rem;
   margin-right: 1rem;
-  color:#7C8D97;
+  color: #7C8D97;
   transition: transform 0.3s;
 }
 
 .social-icons a:hover {
   transform: scale(1.2);
- 
 }
 
+/* 🔻 Responsive Breakpoints */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+  }
 
+  .footer-section {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .social-icons a {
+    margin: 0 0.5rem;
+  }
+}

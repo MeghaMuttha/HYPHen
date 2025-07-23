@@ -1,23 +1,27 @@
 .founders-section {
   padding: 100px 5% 60px;
- background: linear-gradient(120deg, #100f0e, #E5E0D8);
+  background: linear-gradient(120deg, #100f0e, #E5E0D8);
   text-align: center;
 }
 
 .founders-heading {
   font-size: 2.5rem;
-  color: var(--primary-color);
-
-  margin-top:5rem;
+  color: #ffffff;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
 }
 
+/* Founder Cards Grid */
 .founders-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   justify-items: center;
+  padding: 2rem 0;
 }
 
+/* Card Styling */
 .founder-card {
   background: #ffffff;
   padding: 1.5rem;
@@ -32,6 +36,7 @@
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
 
+/* Image */
 .founder-image {
   width: 100%;
   height: auto;
@@ -40,15 +45,16 @@
   object-fit: cover;
 }
 
+/* Texts */
 .founder-card h3 {
   margin: 0.5rem 0 0.2rem;
   font-size: 1.2rem;
-  color: var(--text-primary);
+  color: #111;
 }
 
 .founder-role {
   font-size: 0.95rem;
-  color: var(--secondary-color);
+  color: #7c8d97;
   margin-bottom: 0.8rem;
   font-weight: 500;
 }
@@ -59,7 +65,7 @@
   line-height: 1.5;
 }
 
-/* Responsive Padding */
+/* Responsive: Tablet & Below */
 @media screen and (max-width: 768px) {
   .founders-section {
     padding: 60px 1rem;
@@ -67,5 +73,28 @@
 
   .founders-heading {
     font-size: 2rem;
+  }
+
+  .founders-grid {
+    gap: 1.5rem;
+  }
+
+  .founder-card {
+    padding: 1rem;
+  }
+}
+
+/* Mobile optimization */
+@media screen and (max-width: 480px) {
+  .founders-heading {
+    font-size: 1.5rem;
+  }
+
+  .founder-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .founder-bio {
+    font-size: 0.85rem;
   }
 }
