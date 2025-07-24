@@ -7,6 +7,7 @@ import ProductPage from '../pages/Products/ProductsPage';
 import ReviewsPage from '../pages/Reviews/ReviewsPage';
 import LoginPage from '../pages/Login/LoginPage';
 import ProductDetailPage from '../pages/Products/sections/ProductDetailPage';
+import SignUpPage from '../pages/Login/SignUpPage';
 const RoutesMain = () => {
   return (
     <div>
@@ -18,6 +19,7 @@ const RoutesMain = () => {
         <Route path="/reviews" element={<ReviewsPage />} />
         <Route path="/founder" element={<FounderPage />} />
         <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
       </Routes>
     </div>
   );

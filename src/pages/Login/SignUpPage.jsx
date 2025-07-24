@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import './LoginPage.css';
+import './LoginPage.css'; // Reuse same CSS
 
-const LoginPage = () => {
+const SignUpPage = () => {
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSignUp = (e) => {
     e.preventDefault();
+    console.log('Username:', username);
     console.log('Email:', email);
     console.log('Password:', password);
     // Add validation or API call here
@@ -14,8 +16,16 @@ const LoginPage = () => {
 
   return (
     <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h2 className="form-title">Login to HYPHen</h2>
+      <form className="login-form" onSubmit={handleSignUp}>
+        <h2 className="form-title">Create Your HYPHen Account</h2>
+
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
 
         <input
           type="email"
@@ -33,11 +43,11 @@ const LoginPage = () => {
           required
         />
 
-        <button type="submit">Login</button>
-        <p className="form-footer">Don’t have an account? <a href="/signup">Sign up</a></p>
+        <button type="submit">Sign Up</button>
+        <p className="form-footer">Already have an account? <a href="/login">Login</a></p>
       </form>
     </div>
   );
 };
 
-export default LoginPage;
+export default SignUpPage;
