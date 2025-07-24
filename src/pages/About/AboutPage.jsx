@@ -13,12 +13,12 @@ const AboutPage = () => {
 
   useEffect(() => {
     // Section 1 animation: text from left, image from right
-    gsap.fromTo(textRef1.current, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 1.2 });
-    gsap.fromTo(imgRef1.current, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1.2, delay: 0.3 });
+    gsap.fromTo(textRef1.current, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 2, ease: 'expo.inOut' });
+    gsap.fromTo(imgRef1.current, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 2, delay: 0.3, ease: 'expo.inOut' });
 
     // Section 2 animation: image from left, text from right
-    gsap.fromTo(imgRef2.current, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 1.2, delay: 0.6 });
-    gsap.fromTo(textRef2.current, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1.2, delay: 0.9 });
+    gsap.fromTo(imgRef2.current, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 2, delay: 0.6, ease: 'expo.inOut' });
+    gsap.fromTo(textRef2.current, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 2, delay: 0.9, ease: 'expo.inOut' });
   }, []);
 
   return (

@@ -24,7 +24,7 @@ const WhyChooseUs = () => {
 
 useEffect(() => {
   const screenWidth = window.innerWidth;
-const radius = screenWidth < 768 ? 250 : screenWidth < 1024 ? 180 : 300;
+  const radius = screenWidth < 768 ? 250 : screenWidth < 1024 ? 180 : 300;
 
   // Set initial positions
   gsap.set(imageRefs.current, {

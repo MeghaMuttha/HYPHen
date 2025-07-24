@@ -16,7 +16,7 @@
   max-width: 500px;
   color: #3d2a14;
   font-size: 2.5rem;
-  margin-bottom: 4rem;
+  margin-bottom:2rem;
   padding: 1rem;
   border-radius: 1rem;
   backdrop-filter: blur(6px);
@@ -54,6 +54,19 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .card-swap-container {
+  margin-top: 2rem; /* ⬅️ reduce margin on small screens */
+  padding: 0 1rem; /* ⬅️ add horizontal padding to prevent touching edges */
+  transform: none;
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:4rem;
+}
+
   .cardSectionMain {
     flex-direction: column;
     padding: 1.5rem 1rem;
@@ -76,19 +89,34 @@
     align-items: center;
   }
 
-  .card img {
-    width: 100%;
-    max-width: 350px;
-    height: auto !important;
-  }
+.card img {
+  width: 100%;
+  max-width: 300px; /* ⬅️ slightly smaller */
+  padding: 0.5rem;   /* ⬅️ reduce padding */
+  height: auto !important;
+}
 }
 
 @media (max-width: 480px) {
+  .card-swap-container {
+  margin-top: 2rem; /* ⬅️ reduce margin on small screens */
+  padding: 0 1rem; /* ⬅️ add horizontal padding to prevent touching edges */
+  transform: none;
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:5rem;
+}
+
  .card img {
-    max-width: 320px;
-    width: 100%;
-    height: auto;
-  }
+  max-width: 280px;
+  width: 100%;
+  padding: 0.25rem;
+  height: auto;
+}
 
   .texsection {
     font-size: 1.8rem;

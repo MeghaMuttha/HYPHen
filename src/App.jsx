@@ -7,8 +7,6 @@ import Navbar from './components/common/Navbar/Navbar';
 import Routes from './routes/RoutesMain';
 import Footer from './components/common/Footer/Footer';
 
-
-
 function App() {
   useEffect(() => {
     // Refresh ScrollTrigger on route change
@@ -21,13 +19,11 @@ function App() {
   }, []);
 
   return (
-   
-      <div className="App">
-        <Navbar />
-        <Routes/>
-        <Footer/>
-      </div>
-
+    <div className="App">
+      <Navbar />
+      <Routes/>
+      <Footer/>
+    </div>
   );
 }
 

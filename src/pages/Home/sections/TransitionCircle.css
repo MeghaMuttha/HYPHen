@@ -101,3 +101,37 @@
     padding: 0 1rem;
   }
 }
+.third-content-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-text {
+  margin-top: 2rem;
+  width: 220px;
+  height: 220px;
+}
+
+/* Responsive circular text */
+@media (max-width: 768px) {
+  .circular-text {
+    width: 180px;
+    height: 180px;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .circular-text {
+    width: 150px;
+    height: 150px;
+    margin-top: 1rem;
+  }
+}

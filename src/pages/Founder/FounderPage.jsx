@@ -11,7 +11,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 const FounderPage = () => {
  const containerRef = useRef(null);
-return (
+
+ useEffect(() => {
+   // Example: If you add any GSAP/ScrollTrigger animation here, make it smooth and use scroller: '[data-scroll-container]'.
+   // Example:
+   // gsap.fromTo(containerRef.current, { opacity: 0 }, { opacity: 1, duration: 2, ease: 'expo.inOut' });
+ }, []);
+
+ return (
     <section className="founders-section">
      
        <div ref={containerRef}

@@ -45,25 +45,28 @@ const TransitionCircle = () => {
 
   return (
     <section className="third-section" ref={sectionRef}>
-      <img
-        ref={leftImgRef}
-        src={imageLeft}
-        alt="Floating"
-        className="third-img"
-      />
+  <div className="third-content-wrapper">
+    <img
+      ref={leftImgRef}
+      src={imageLeft}
+      alt="Floating"
+      className="third-img"
+    />
 
-      <div className="text">
-        <h2 className="tagline">Feel the science. <br /> Love the results.</h2>
-        <p className="subtext">Experience the synergy of nature and innovation.</p>
-      </div>
+    <div className="text">
+      <h2 className="tagline">Feel the science. <br /> Love the results.</h2>
+      <p className="subtext">Experience the synergy of nature and innovation.</p>
+    </div>
 
-      <CircularText
-        text="HAVE-IT-ALL*"
-        onHover="speedUp"
-        spinDuration={20}
-        className="custom-class"
-      />
-    </section>
+    <CircularText
+      text="HAVE-IT-ALL*"
+      onHover="speedUp"
+      spinDuration={20}
+      className="circular-text"
+    />
+  </div>
+</section>
+
   );
 };
 
