@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-
+import './index.css'
 import Navbar from './components/common/Navbar/Navbar';
 import Routes from './routes/RoutesMain';
 import Footer from './components/common/Footer/Footer';

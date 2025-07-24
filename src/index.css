@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Coota';
+  src: url('./assets/fonts/Coota-Free.otf') format('opentype');
+  font-weight: normal;
+  font-style:normal;
+}
+
+body {
+  font-family: 'Coota', sans-serif;
+}

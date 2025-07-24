@@ -11,20 +11,38 @@ export class NavbarAnimations {
   initAnimation() {
     const { navRef, logoRef, menuItemsRef } = this.refs;
 
-    this.tl.fromTo(navRef.current, 
+    // Safety check
+    if (!navRef?.current || !logoRef?.current || !menuItemsRef?.current) return;
+
+    this.tl.fromTo(navRef.current,
       { y: -100, opacity: 0 },
       { y: 0, opacity: 1, duration: durations.normal, ease: easings.smooth }
     )
     .fromTo(logoRef.current,
-      { scale: 0, rotation: -180 },
-      { scale: 1, rotation: 0, duration: durations.normal, ease: easings.back },
-      "-=0.3"
+      {
+        position: "absolute",
+        left: "50%",
+        top: "50%",
+        xPercent: -50,
+        yPercent: -50,
+        scale: 2,
+        opacity: 0,
+        zIndex: 1000
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: durations.normal,
+        ease: easings.back,
+        clearProps: "position,left,top,xPercent,yPercent,transform"
+      },
+      "-=0.5"
     )
     .fromTo(menuItemsRef.current,
       { opacity: 0, y: -20 },
-      { 
-        opacity: 1, 
-        y: 0, 
+      {
+        opacity: 1,
+        y: 0,
         duration: durations.fast,
         stagger: 0.1,
         ease: easings.smooth
@@ -35,33 +53,38 @@ export class NavbarAnimations {
     return this.tl;
   }
 
-  // Scroll animations
+  // Scroll animation for background
   scrollAnimation(isScrolled) {
     const { navRef } = this.refs;
-    
+    if (!navRef?.current) return;
+
     gsap.to(navRef.current, {
       backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 1)',
       backdropFilter: isScrolled ? 'blur(10px)' : 'blur(0px)',
-      boxShadow: isScrolled ? '0 2px 20px rgba(0, 0, 0, 0.1)' : '0 2px 10px rgba(0, 0, 0, 0.05)',
+      boxShadow: isScrolled
+        ? '0 2px 20px rgba(0, 0, 0, 0.1)'
+        : '0 2px 10px rgba(0, 0, 0, 0.05)',
       duration: durations.fast,
       ease: easings.smooth
     });
   }
 
-  // Mobile menu animations
+  // Mobile menu open/close animation
   mobileMenuAnimation(isOpen, mobileMenuRef) {
+    if (!mobileMenuRef?.current) return;
+
     if (isOpen) {
       gsap.to(mobileMenuRef.current, {
         x: 0,
         duration: durations.normal,
         ease: easings.smooth
       });
-      
+
       gsap.fromTo(mobileMenuRef.current.children,
         { opacity: 0, x: 50 },
-        { 
-          opacity: 1, 
-          x: 0, 
+        {
+          opacity: 1,
+          x: 0,
           duration: durations.fast,
           stagger: 0.1,
           delay: 0.2,
@@ -77,47 +100,35 @@ export class NavbarAnimations {
     }
   }
 
-  // Hover animations
+  // Hover animation for menu items
   menuItemHover(item, isEntering) {
-    if (isEntering) {
-      gsap.to(item, {
-        scale: 1.05,
-        color: '#2563eb',
-        duration: durations.fast,
-        ease: easings.smooth
-      });
-    } else {
-      gsap.to(item, {
-        scale: 1,
-        color: '#1f2937',
-        duration: durations.fast,
-        ease: easings.smooth
-      });
-    }
+    if (!item) return;
+
+    gsap.to(item, {
+      scale: isEntering ? 1.05 : 1,
+      color: isEntering ? '#2563eb' : '#1f2937',
+      duration: durations.fast,
+      ease: easings.smooth
+    });
   }
 
+  // Hover animation for logo
   logoHover(isEntering) {
     const { logoRef } = this.refs;
-    
-    if (isEntering) {
-      gsap.to(logoRef.current, {
-        scale: 1.1,
-        rotation: 5,
-        duration: durations.fast,
-        ease: easings.smooth
-      });
-    } else {
-      gsap.to(logoRef.current, {
-        scale: 1,
-        rotation: 0,
-        duration: durations.fast,
-        ease: easings.smooth
-      });
-    }
+    if (!logoRef?.current) return;
+
+    gsap.to(logoRef.current, {
+      scale: isEntering ? 1.1 : 1,
+      rotation: isEntering ? 5 : 0,
+      duration: durations.fast,
+      ease: easings.smooth
+    });
   }
 
-  // Active state animation
+  // Active state glow effect
   activeStateAnimation(item) {
+    if (!item) return;
+
     gsap.to(item, {
       textShadow: '0 0 10px rgba(37, 99, 235, 0.3)',
       duration: durations.fast,
@@ -125,7 +136,7 @@ export class NavbarAnimations {
     });
   }
 
-  // Cleanup
+  // Cleanup method
   cleanup() {
     this.tl.kill();
   }
