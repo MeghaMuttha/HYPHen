@@ -10,7 +10,7 @@ import img2 from '../../../assets/images/discover/img2.jpg';
 import img3 from '../../../assets/images/discover/img3.jpg';
 import img4 from '../../../assets/images/discover/img4.jpg';
 import img5 from '../../../assets/images/discover/img5.jpg';
-import fly from '../../../assets/images/hero/fly.png'
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,7 +83,7 @@ return (
   as="h3"
   showCursor={true}
   cursorCharacter="|"
-  startOnVisible={false}   // 🟢 Animate on load
+  startOnVisible={false}  
   loop={true}
 />
 

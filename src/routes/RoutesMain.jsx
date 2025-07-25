@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import React from 'react';
 import HomePage from '../pages/Home/HomePage';
-import AboutPage from '../pages/About/AboutPage'; // ✅ You missed this
+import AboutPage from '../pages/About/AboutPage'; 
 import FounderPage from '../pages/Founder/FounderPage';
 import ProductPage from '../pages/Products/ProductsPage';
 import ReviewsPage from '../pages/Reviews/ReviewsPage';
@@ -19,7 +18,7 @@ const RoutesMain = () => {
         <Route path="/reviews" element={<ReviewsPage />} />
         <Route path="/founder" element={<FounderPage />} />
         <Route path="/product/:id" element={<ProductDetailPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
       </Routes>
     </div>
   );
